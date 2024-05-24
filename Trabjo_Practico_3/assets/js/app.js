@@ -18,4 +18,16 @@ function agregarTarea(tasks) {
         return;
     }
     tasks.push(nuevaTarea);
+    console.log("tarea agregada:", nuevaTarea)
+}
+//listar todas las tareas
+function listarTareas(tasks) {
+    if (tasks.length === 0) {
+        console.log("No hay tareas para mostrar.");
+    } else {
+        console.log("Lista de tareas:");
+        for (let i = 0; i < tasks.length; i++) {
+            console.log(`${i + 1}. ${tasks[i]}`);
+        }
+    }
 }
