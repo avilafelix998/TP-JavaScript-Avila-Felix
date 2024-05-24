@@ -31,3 +31,21 @@ function listarTareas(tasks) {
         }
     }
 }
+//Editar una tarea
+function editarTarea(tasks) {
+    let tareaOriginal = prompt("ingrese el nombre de la tarea que desea editar:")-trim();
+    let index = tasks.indexof(tareaOriginal);
+
+    if (index === -1) {
+        console.error("Error: la tarea no se encuantra en la lista.");
+        return;
+    }
+    let nuevaTarea = prompt("Ingrese el nuevo nombre de la tarea").trim();
+    if (nuevaTarea === "" || nuevaTarea.length === 0){
+        console.error("Error: el nuevo nombre de la tarea no puede estar vacío ni contener espacios vacíos al principios ni al final.");
+        return;
+    }
+    tasks[index] = nuevaTarea;
+    console.log("Tarea editada:", nuevaTarea)
+    
+}
