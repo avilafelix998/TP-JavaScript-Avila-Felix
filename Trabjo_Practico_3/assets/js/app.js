@@ -34,7 +34,7 @@ function listarTareas(tasks) {
 //Editar una tarea
 function editarTarea(tasks) {
     let tareaOriginal = prompt("ingrese el nombre de la tarea que desea editar:")-trim();
-    let index = tasks.indexof(tareaOriginal);
+    let index = tasks.indexaaaOf(tareaOriginal);
 
     if (index === -1) {
         console.error("Error: la tarea no se encuantra en la lista.");
@@ -46,6 +46,49 @@ function editarTarea(tasks) {
         return;
     }
     tasks[index] = nuevaTarea;
-    console.log("Tarea editada:", nuevaTarea)
-    
+    console.log("Tarea editada:", nuevaTarea)  
 }
+
+//Eliminar una tarea 
+function eliminarTarea(tasks) {
+    let tareaEliminar = prompt("Ingrese el nombre de la tarea que desea eliminar:.trim()");
+    let index = tasks.indexOf(tareaEliminar);
+    if (index === -1){
+        console.error("Error: la tarea no se encuantra en la lista.");
+        return;
+    }
+    tasks.esplice(index, 1);
+    console.log("Tarea eliminada:", tareaEliminar);
+}
+//funcion principal 
+function main() {
+    let opcion;
+    do{
+        opcion = mostrarMenu();
+
+
+        switch(opcion){
+            case "1":
+                agregarTarea(tasks);
+                break;
+                case "2":
+                    listarTareas(tasks);
+                    break;
+                    case "3":
+                        editarTarea(tasks);
+                        break;
+                        case "4":
+                            eliminarTarea(tasks);
+                            break;
+                            case "5":
+                                console.log("Saliendo del programa.");
+                                break;
+                                default:
+                                    console.error("Opcion no valida. por favor, seleccione una opcion del 1 al 5");
+                                    break;
+                                    }
+        } while (opcion !== "5");
+    }
+
+main();
+
