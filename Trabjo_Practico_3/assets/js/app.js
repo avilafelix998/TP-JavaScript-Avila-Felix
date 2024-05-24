@@ -10,3 +10,12 @@ function mostrarMenu(params) {
 
     )
 }
+//Agregar una tarea 
+function agregarTarea(tasks) {
+    let nuevaTarea = prompt("Ingrese la tarea que desea agregar:").trim();
+    if (nuevaTarea ==="" || nuevaTarea.length === 0 ) {
+        console.log("Error: el nombre de la tarea no puede estar vacío ni contener espacios vacíos al principio ni al final");
+        return;
+    }
+    tasks.push(nuevaTarea);
+}
